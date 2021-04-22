@@ -12,16 +12,22 @@
     $paragraph = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nemo ad veniam doloribus reprehenderit debitis eius voluptates mollitia aperiam. Inventore dolor veniam repellendus debitis magni voluptatem suscipit explicabo recusandae similique. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, quidem ut eos mollitia eveniet sint iusto fugiat fugit deserunt, possimus nihil quaerat natus saepe facere molestiae? Sint quia inventore voluptatum.';
     $badWord = $_GET['badWord'];
 ?>
-
-<h1>La parola da oscurare sarà '<?php echo $badWord;?>'</h1>
+<h1>Il paragrafo nativo è di <?php echo strlen($paragraph);?> caratteri</h1>
+<p>
+    <?php echo $paragraph;
+    ?>
+</p>
+<h2>La parola da oscurare sarà '<?php echo $badWord;?>'</h2>
+<h4> Inseriscila nell'indirizzo con ?badWord='parola'</h4>
 
 <p>
     <?php
-    echo str_replace($badWord,'***',$paragraph);
+    $newParagraph = str_replace($badWord,'***',$paragraph);
+    echo $newParagraph;
     ?>
 </p>
+<h1>Il paragrafo modificato è di <?php echo strlen($newParagraph);?> caratteri</h1>
 
-<h3>La lunghezza del paragrafo è <?php echo strlen($paragraph);?> caratteri</h3>
     
 </body>
 </html>
